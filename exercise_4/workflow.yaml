@@ -21,3 +21,21 @@ jobs:
 
   # Chain the next job to the previous one and make it deploy
   # to different environments with manual approvals
+  deploy_to_environments:
+    runs-on: ubuntu-latest
+    needs: [build-and-push]
+    strategy:
+      fail-fast: true
+      max-parallel: 1
+      matrix:
+        pillar: [dev, acc, pro]
+    environment: ${{ matrix.pillar }}
+    steps:
+      - name: Checkout github repository
+        uses: actions/checkout@v4
+      - name: Print environment
+        run : echo "Doing the deploy to ${{ matrix.pillar }}"
+      - name: Simulate deploy
+        run: sleep 3
+      - name: Finish deployment
+        run: echo "Deployment completed successfully""
