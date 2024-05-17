@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - id: foo
-      uses: .github/actions/greeting/action.yml
+      uses: .github/actions/greeting
       with: 
         names: "Kris"
 
