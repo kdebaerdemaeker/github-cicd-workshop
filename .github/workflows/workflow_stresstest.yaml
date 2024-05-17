@@ -10,7 +10,7 @@ on:
 
 jobs:
   stress-test:
-    runs-on: self-hosted
+    runs-on: krisgitpod
 
     steps:
     - name: Checkout repository
