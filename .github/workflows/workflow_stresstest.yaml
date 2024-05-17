@@ -2,7 +2,7 @@ name: Stress Test Workflow
 
 on:
   pull_request:
-    branches: [master]
+    # branches: [master]
 
 jobs:
   stress-test:
