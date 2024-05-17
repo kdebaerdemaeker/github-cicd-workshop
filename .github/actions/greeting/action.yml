@@ -1,7 +1,7 @@
 name: 'Greet'
 description: 'Greet someone'
 inputs:
-  who-to-greet:  # id of input
+  names:  # id of input
     description: 'Who to greet'
     required: true
     default: 'World'
@@ -12,5 +12,5 @@ runs:
       run: echo "Hello $INPUT_WHO_TO_GREET."
       shell: bash
       env:
-        INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
+        INPUT_WHO_TO_GREET: ${{ inputs.names }}
 
