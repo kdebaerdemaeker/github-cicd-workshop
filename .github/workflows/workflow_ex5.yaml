@@ -12,8 +12,8 @@ jobs:
     name: A job to say hello
     steps:
     - uses: actions/checkout@v4
-    - id: foo
-      uses: .github/actions/greeting
+    - name: foo
+      uses: ./.github/actions/greeting
       with: 
         names: "Kris"
 
